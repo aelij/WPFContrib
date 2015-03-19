@@ -2,6 +2,8 @@
 A collection of WPF controls and utility classes I've accumulated over the years.
 Originally hosted on CodePlex.
 
+Few articles about some of the items in the library can be found on my blog (http://arbel.net/tag/wpfcontrib/).
+
 ## How to get it
 NuGet: https://www.nuget.org/packages/AvalonLibrary
 
