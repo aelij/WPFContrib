@@ -1,0 +1,12 @@
+﻿<Page x:Class="WpfContribTest.Pages.FolderBrowserDialog"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:av="http://schemas.codeplex.com/wpfcontrib/xaml/presentation"
+      Title="FolderBrowserDialog">
+    <StackPanel>
+        <Button Content="Show Dialog" Click="Button_Click" HorizontalAlignment="Left" Margin="5" />
+        <TextBox Name="folder" Margin="5" />
+        <CheckBox Name="ShowEditBox" Content="Show Edit Box" />
+        <CheckBox Name="BrowseShares" Content="Browse Shares" />
+    </StackPanel>
+</Page>

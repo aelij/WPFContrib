@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://raw.githubusercontent.com/aelij/WPFContrib/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/aelij/WPFContrib/</projectUrl>
+    <iconUrl>http://download.codeplex.com/Download?ProjectName=wpfcontrib&amp;DownloadId=45634&amp;Build=20885</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>WPF Contrib WPFContrib</tags>
+  </metadata>
+</package>

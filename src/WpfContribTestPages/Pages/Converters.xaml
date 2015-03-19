@@ -1,0 +1,26 @@
+﻿<Page x:Class="WpfContribTest.Pages.Converters"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:av="http://schemas.codeplex.com/wpfcontrib/xaml/presentation"
+      Title="Converters">
+    <Page.Resources>
+        <av:LightColorConverter x:Key="LightColorConverter" />
+        <av:DarkColorConverter x:Key="DarkColorConverter" />
+    </Page.Resources>
+    <av:AutoGrid ChildMargin="5" VerticalAlignment="Top" ShowGridLines="True">
+        <TextBlock Text="FormattedTextConverter" />
+        <TextBlock TextWrapping="Wrap"
+                   av:BindingHelpers.Inlines="This is a [b][u]TextBlock[/][/] with formatted text set using the [i]BindingHelpers.Inlines[/] attached property.[nl/]This is useful if you want to add formatted text from some data source without tying it to a WPF-specific syntax." />
+
+        <TextBlock Text="LightColorConverter / DarkColorConverter" />
+        <Rectangle RadiusX="10" RadiusY="10" Height="50">
+            <Rectangle.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="{Binding Color, Converter={StaticResource LightColorConverter}}" Offset="0" />
+                    <GradientStop Color="{Binding Color}" Offset="0.5" />
+                    <GradientStop Color="{Binding Color, Converter={StaticResource DarkColorConverter}}" Offset="1" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+    </av:AutoGrid>
+</Page>

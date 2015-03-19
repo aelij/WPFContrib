@@ -1,0 +1,47 @@
+﻿<Page x:Class="WpfContribTest.Pages.Animation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:av="http://schemas.codeplex.com/wpfcontrib/xaml/presentation"
+      Title="Animation">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                        <av:CornerRadiusAnimation To="100" Duration="0:0:2" Storyboard.TargetName="TheFirstBorder"
+                                                  Storyboard.TargetProperty="CornerRadius" />
+                    </Storyboard>
+                </BeginStoryboard>
+                <BeginStoryboard>
+                    <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                        <av:CornerRadiusAnimationUsingKeyFrames Duration="0:0:5"
+                                                                Storyboard.TargetName="TheSecondBorder"
+                                                                Storyboard.TargetProperty="CornerRadius">
+                            <av:DiscreteCornerRadiusKeyFrame KeyTime="0:0:1" Value="10" />
+                            <av:DiscreteCornerRadiusKeyFrame KeyTime="0:0:2" Value="20" />
+                            <av:DiscreteCornerRadiusKeyFrame KeyTime="0:0:3" Value="50" />
+                            <av:DiscreteCornerRadiusKeyFrame KeyTime="0:0:4" Value="100" />
+                        </av:CornerRadiusAnimationUsingKeyFrames>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </Page.Triggers>
+    <DockPanel>
+        <TextBlock TextWrapping="Wrap" DockPanel.Dock="Top"
+                   Text="The CornerRadiusAnimation sample shows how to easily implement an animation for a new type using the generic base classes provided in the Avalon.Windows.Media.Animation namespace." />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Name="TheFirstBorder" Margin="30" Background="Gold" BorderBrush="Black" BorderThickness="2">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">CornerRadiusAnimation</TextBlock>
+            </Border>
+            <Border Grid.Row="1" Name="TheSecondBorder" Margin="30" Background="GreenYellow" BorderBrush="Black"
+                    BorderThickness="2">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">CornerRadiusAnimationUsingKeyFrames</TextBlock>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Page>

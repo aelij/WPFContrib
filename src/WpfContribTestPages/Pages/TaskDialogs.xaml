@@ -1,0 +1,296 @@
+﻿<Page x:Class="WpfContribTest.Pages.TaskDialogs"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:av="http://schemas.codeplex.com/wpfcontrib/xaml/presentation"
+      Title="Task Dialogs"
+      Name="This">
+    <Page.Resources>
+        <DataTemplate x:Key="FileInfoTemplate">
+            <DockPanel TextBlock.Foreground="Black">
+                <Image DockPanel.Dock="Left"
+                       VerticalAlignment="Top"
+                       Margin="5"
+                       Width="32"
+                       Height="32"
+                       Stretch="Uniform"
+                       Source="/WpfContribTestPages;component/Properties/App.ico" />
+                <StackPanel>
+                    <TextBlock Text="{Binding Name}"
+                               FontWeight="Bold" />
+                    <TextBlock Text="{Binding DirectoryName}"
+                               Foreground="Navy" />
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <Binding Path="Length"
+                                     StringFormat="Size: {0:#,#0,.0} KB" />
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <TextBlock Text="{Binding LastWriteTime, StringFormat=Date Modified: {0}}" />
+                </StackPanel>
+            </DockPanel>
+        </DataTemplate>
+        <av:TaskDialog x:Key="SampleDialog"
+                       Background="White"
+                       Header="There is already a file with the same name in this location."
+                       Content="Click the file you want to keep"
+                       AllowDialogCancellation="True">
+            <av:TaskDialog.CommandLinkContainerStyle>
+                <Style>
+                    <Setter Property="FrameworkElement.Margin"
+                            Value="0,0,0,10" />
+                </Style>
+            </av:TaskDialog.CommandLinkContainerStyle>
+            <av:TaskDialog.CommandLinkTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <ContentPresenter RecognizesAccessKey="True"
+                                          DockPanel.Dock="Top"
+                                          TextBlock.FontSize="16"
+                                          Content="{Binding Header}" />
+                        <ContentPresenter DockPanel.Dock="Top"
+                                          Content="{Binding Content}"
+                                          TextBlock.Foreground="Black" />
+                        <ContentPresenter Name="tag"
+                                          Content="{Binding Tag}"
+                                          ContentTemplate="{StaticResource FileInfoTemplate}" />
+                    </DockPanel>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Tag}"
+                                     Value="{x:Null}">
+                            <Setter TargetName="tag"
+                                    Property="Visibility"
+                                    Value="Collapsed" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </av:TaskDialog.CommandLinkTemplate>
+        </av:TaskDialog>
+    </Page.Resources>
+    <av:InlineModalDecorator Target="{x:Reference This}">
+        <Grid>
+            <DockPanel Name="options">
+                <DockPanel DockPanel.Dock="Bottom"
+                           Margin="10">
+                    <Button DockPanel.Dock="Right"
+                            Content="Show Sample"
+                            Name="ShowSample"
+                            Click="ShowSample_Click"
+                            Margin="10,0,0,0" />
+                    <Button DockPanel.Dock="Right"
+                            Content="_Show Dialog"
+                            Name="ShowTaskDialog"
+                            Click="ShowTaskDialog_Click" />
+                    <StackPanel>
+                        <CheckBox Content="Show inline"
+                                  Name="ShowInline"
+                                  Grid.ColumnSpan="2" />
+                        <TextBlock Name="ShowInlineDisabled"
+                                   Visibility="Collapsed"
+                                   FontSize="8"
+                                   Foreground="Gray"
+                                   Text="In partial trust TaskDialog can only appear as an inline element." />
+                    </StackPanel>
+                </DockPanel>
+
+                <TabControl SelectedIndex="0">
+                    <TabItem Header="_General">
+                        <av:AutoGrid VerticalAlignment="Top"
+                                     ChildMargin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Content="Title" />
+                            <TextBox Name="TitleText" />
+
+                            <Label Content="Header (Main Instruction)" />
+                            <TextBox Name="HeaderText" />
+
+                            <Label Content="Content" />
+                            <TextBox Name="ContentText" />
+
+                            <Label Content="Footer" />
+                            <TextBox Name="FooterText" />
+
+                            <Label Content="Verification" />
+                            <TextBox Name="VerificationText" />
+
+                            <CheckBox Content="Show Progress Bar"
+                                      Name="ShowProgresBar"
+                                      Grid.ColumnSpan="2"
+                                      Margin="7" />
+
+                            <CheckBox Content="Indeterminate Progress Bar"
+                                      Name="ProgresBarIndeterminate"
+                                      Grid.ColumnSpan="2"
+                                      Margin="7" />
+
+                            <CheckBox Content="Allow Dialog Cancellation"
+                                      Name="AllowCancellation"
+                                      Grid.ColumnSpan="2"
+                                      Margin="7" />
+
+                        </av:AutoGrid>
+                    </TabItem>
+                    <TabItem Header="_Expansion">
+                        <av:AutoGrid VerticalAlignment="Top"
+                                     ChildMargin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Content="Expansion Information" />
+                            <TextBox Name="ExpansionText" />
+
+                            <Label Content="Expansion Button" />
+                            <TextBox Name="ExpansionButtonText" />
+
+                            <CheckBox Margin="7"
+                                      Content="Expand footer area"
+                                      Name="ExpandFooter" />
+                        </av:AutoGrid>
+                    </TabItem>
+                    <TabItem Header="_Buttons">
+                        <StackPanel>
+                            <GroupBox Header="Standard Buttons">
+                                <av:AutoGrid HorizontalAlignment="Left"
+                                             ChildMargin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Name="OKButton"
+                                              Content="OK" />
+                                    <CheckBox Name="CancelButton"
+                                              Content="Cancel" />
+                                    <CheckBox Name="RetryButton"
+                                              Content="Retry" />
+                                    <CheckBox Name="YesButton"
+                                              Content="Yes" />
+                                    <CheckBox Name="NoButton"
+                                              Content="No" />
+                                    <CheckBox Name="CloseButton"
+                                              Content="Close" />
+                                </av:AutoGrid>
+                            </GroupBox>
+                            <GroupBox Header="Custom Buttons">
+                                <DockPanel Name="ButtonsPanel">
+                                    <CheckBox Margin="5"
+                                              DockPanel.Dock="Bottom"
+                                              Name="UseCommandLinks"
+                                              Content="Use Command Links" />
+
+                                    <DockPanel Width="150"
+                                               DockPanel.Dock="Right">
+                                        <StackPanel Orientation="Horizontal"
+                                                    DockPanel.Dock="Top">
+                                            <Button Name="AddButton"
+                                                    Click="AddButton_Click"
+                                                    Content="Add" />
+                                            <Button Name="RemoveButton"
+                                                    Click="RemoveButton_Click"
+                                                    Content="Remove"
+                                                    IsEnabled="False" />
+                                        </StackPanel>
+
+                                        <av:AutoGrid Name="ButtonFields"
+                                                     ChildMargin="3"
+                                                     IsEnabled="False">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition />
+                                            </Grid.ColumnDefinitions>
+                                            <Label Content="Header" />
+                                            <TextBox Name="ButtonHeader"
+                                                     Text="{Binding Header, UpdateSourceTrigger=PropertyChanged}" />
+
+                                            <Label Content="Content" />
+                                            <TextBox Name="ButtonContent"
+                                                     Text="{Binding Content, UpdateSourceTrigger=PropertyChanged}" />
+
+                                            <Label Content="Value" />
+                                            <TextBox Name="ButtonValue"
+                                                     Text="{Binding Value, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True}" />
+
+                                            <CheckBox Name="ButtonIsDefault"
+                                                      Content="Is Default"
+                                                      IsChecked="{Binding IsDefault}"
+                                                      Grid.ColumnSpan="2" />
+                                        </av:AutoGrid>
+                                    </DockPanel>
+                                    <ListView Name="Buttons"
+                                              ItemsSource="{Binding}"
+                                              IsSynchronizedWithCurrentItem="True"
+                                              SelectionChanged="Buttons_SelectionChanged">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn Header="Header"
+                                                                DisplayMemberBinding="{Binding Header}"
+                                                                Width="100" />
+                                                <GridViewColumn Header="Content"
+                                                                DisplayMemberBinding="{Binding Content}"
+                                                                Width="100" />
+                                                <GridViewColumn Header="Value"
+                                                                DisplayMemberBinding="{Binding Value}"
+                                                                Width="100" />
+                                                <GridViewColumn Header="Is Default"
+                                                                DisplayMemberBinding="{Binding IsDefault}"
+                                                                Width="100" />
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                </DockPanel>
+                            </GroupBox>
+                            <GroupBox Header="Radio Buttons">
+                                <DockPanel>
+                                    <StackPanel DockPanel.Dock="Top"
+                                                Orientation="Horizontal">
+                                        <Button Content="Add"
+                                                Click="AddRadioButton_Click" />
+                                        <Button Name="RemoveRadioButton"
+                                                IsEnabled="False"
+                                                Content="Remove"
+                                                Click="RemoveRadioButton_Click" />
+                                    </StackPanel>
+                                    <ListBox Name="Radios">
+                                        <ListBox.ItemContainerStyle>
+                                            <Style TargetType="ListBoxItem">
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="ListBoxItem">
+                                                            <TextBox Name="RadioName"
+                                                                     Text="{Binding Value}"
+                                                                     GotFocus="RadioName_GotFocus" />
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </ListBox.ItemContainerStyle>
+                                    </ListBox>
+                                </DockPanel>
+                            </GroupBox>
+                        </StackPanel>
+                    </TabItem>
+                    <TabItem Header="_Icons">
+                        <av:AutoGrid ChildMargin="5"
+                                     VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Main Icon" />
+                            <ComboBox Name="MainIcon"
+                                      SelectedIndex="0" />
+                            <Label Content="Footer Icon" />
+                            <ComboBox Name="FooterIcon"
+                                      SelectedIndex="0" />
+                        </av:AutoGrid>
+                    </TabItem>
+                </TabControl>
+            </DockPanel>
+        </Grid>
+    </av:InlineModalDecorator>
+</Page>

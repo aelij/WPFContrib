@@ -1,0 +1,47 @@
+﻿<Page x:Class="WpfContribTest.Pages.ListMove"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:av="http://schemas.codeplex.com/wpfcontrib/xaml/presentation"
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+      xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+      mc:Ignorable="d"
+      d:DesignHeight="300"
+      d:DesignWidth="300"
+      Title="ListMove">
+    <Grid>
+        <ListBox Name="TheList"
+                 HorizontalContentAlignment="Stretch"
+                 av:ListItemMoveBehavior.IsEnabled="True">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel>
+                        <i:Interaction.Behaviors>
+                            <ei:FluidMoveBehavior AppliesTo="Children"
+                                                  Duration="0:0:0.1">
+                            </ei:FluidMoveBehavior>
+                        </i:Interaction.Behaviors>
+                    </StackPanel>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel>
+                        <Ellipse DockPanel.Dock="Right"
+                                 Margin="5"
+                                 Width="10"
+                                 Height="10"
+                                 Fill="Gray"
+                                 VerticalAlignment="Center"
+                                 av:ListItemMoveBehavior.IsElementDraggable="True"
+                                 Cursor="SizeNS" />
+                        <TextBlock Text="{Binding}"
+                                   Margin="20"
+                                   VerticalAlignment="Center" />
+                    </DockPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Page>

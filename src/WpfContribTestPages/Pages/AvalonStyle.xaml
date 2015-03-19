@@ -1,0 +1,36 @@
+﻿<Page x:Class="WpfContribTest.Pages.AvalonStyle"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Avalon Style">
+    <Page.Resources>
+        <ResourceDictionary Source="/AvalonLibrary;component/themes/avalon.xaml" />
+    </Page.Resources>
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Margin="20" Text="A recreation of the original Avalon theme." />
+        <Viewbox Stretch="Uniform">
+            <Border Background="White" BorderThickness="1" BorderBrush="Black" Margin="20">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel Margin="5">
+                        <TextBox>Text</TextBox>
+                        <Button HorizontalAlignment="Left" Padding="4" Margin="2">OK</Button>
+                        <ComboBox Margin="2">
+                            <ComboBoxItem Content="one" />
+                            <ComboBoxItem Content="two" />
+                            <ComboBoxItem Content="three" />
+                        </ComboBox>
+                        <ProgressBar Height="15" Value="50" />
+                    </StackPanel>
+                    <ListBox MinWidth="80" Height="150" Margin="5">
+                        <ListBoxItem Content="one" />
+                        <ListBoxItem Content="two" />
+                        <ListBoxItem Content="three" />
+                        <ListBoxItem Content="four" />
+                        <ListBoxItem Content="five" />
+                        <ListBoxItem Content="six" />
+                        <ListBoxItem Content="seven" />
+                    </ListBox>
+                </StackPanel>
+            </Border>
+        </Viewbox>
+    </DockPanel>
+</Page>

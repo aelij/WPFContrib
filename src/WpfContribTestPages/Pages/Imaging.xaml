@@ -1,0 +1,49 @@
+﻿<Page x:Class="WpfContribTest.Pages.Imaging"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:av="http://schemas.codeplex.com/wpfcontrib/xaml/presentation"
+      Title="Imaging">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Margin="20">
+            <TextBlock FontWeight="Bold" Text="ImageStrip" />
+            <TextBlock Margin="0,5,0,0" Text="Displays a single image from a strip." />
+
+            <TextBlock Margin="0,10,0,5" Text="Original image:" />
+            <Image Source="/WpfContribTestPages;component/Images/Spinner.png" />
+
+            <TextBlock Margin="0,10,0,5" Text="Animated using ImageStrip:" />
+            <av:ImageStrip Image="/WpfContribTestPages;component/Images/Spinner.png" FrameSize="20" Width="20"
+                           Height="20">
+                <FrameworkElement.Triggers>
+                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <Int32Animation From="0" To="17" Duration="0:0:1" Storyboard.TargetProperty="Frame"
+                                                RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </FrameworkElement.Triggers>
+            </av:ImageStrip>
+        </StackPanel>
+
+        <StackPanel Margin="20" Grid.Column="1">
+            <TextBlock FontWeight="Bold" Text="NineGridBorder" />
+            <TextBlock Margin="0,5,0,0" Text="Renders a border using a nine-grid image." />
+
+            <TextBlock Margin="0,10,0,5" Text="Original image:" />
+            <Image Source="/WpfContribTestPages;component/Images/Shadow.png" Stretch="None" />
+
+            <TextBlock Margin="0,10,0,5" Text="Around a button:" />
+            <av:NineGridBorder Image="/WpfContribTestPages;component/Images/Shadow.png" ImageMargin="16"
+                               Padding="16">
+                <Button Content="Shadow around me" Height="100" />
+            </av:NineGridBorder>
+        </StackPanel>
+    </Grid>
+</Page>

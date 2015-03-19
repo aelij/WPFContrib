@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="WpfContribTest.Main"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:WpfContribTest"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             Name="This">
+    <FrameworkElement.Resources>
+        <XmlDataProvider x:Key="Pages">
+            <x:XData>
+                <Pages xmlns="">
+                    <Page Uri="Pages\Introduction.xaml"
+                          Title="Introduction" />
+                    <Page Uri="Pages\TaskDialogs.xaml"
+                          Title="Task Dialog" />
+                    <Page Uri="Pages\InlineDialogs.xaml"
+                          Title="Inline Dialogs" />
+                    <Page Uri="Pages\NotifyIcon.xaml"
+                          Title="Notify Icon"
+                          RequiresFullTrust="True" />
+                    <Page Uri="Pages\ListMove.xaml"
+                          Title="List Item Move" />
+                    <Page Uri="Pages\Imaging.xaml"
+                          Title="Imaging" />
+                    <Page Uri="Pages\Panels.xaml"
+                          Title="Panels" />
+                    <Page Uri="Pages\Animation.xaml"
+                          Title="Animation" />
+                    <Page Uri="Pages\Converters.xaml"
+                          Title="Converters" />
+                    <Page Uri="Pages\Effects.xaml"
+                          Title="Effects"
+                          RequiresFullTrust="True" />
+                    <Page Uri="Pages\Text.xaml"
+                          Title="Text" />
+                    <Page Uri="Pages\AvalonStyle.xaml"
+                          Title="Avalon Theme" />
+                    <Page Uri="Pages\FolderBrowserDialog.xaml"
+                          Title="Folder Browser Dialog"
+                          RequiresFullTrust="True" />
+                </Pages>
+            </x:XData>
+        </XmlDataProvider>
+    </FrameworkElement.Resources>
+    <Grid SnapsToDevicePixels="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Border>
+            <FrameworkElement.Resources>
+                <ResourceDictionary Source="/AvalonLibrary;component/themes/avalon.xaml" />
+            </FrameworkElement.Resources>
+            <ListBox Name="PageList"
+                     SelectedIndex="0"
+                     ItemsSource="{Binding Source={StaticResource Pages}, XPath=Pages/Page}"
+                     VerticalAlignment="Top"
+                     SelectedValuePath="@Uri"
+                     DisplayMemberPath="@Title"
+                     Margin="10,10,20,10"
+                     BorderThickness="0"
+                     Background="Transparent">
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem"
+                           BasedOn="{StaticResource {x:Type ListBoxItem}}">
+                        <Setter Property="Background" Value="LightSkyBlue" />
+                        <Setter Property="IsEnabled"
+                                Value="{Binding RelativeSource={RelativeSource Self}, Path=Content, Converter={loc:PageRequirementsConverter}}" />
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+            </ListBox>
+        </Border>
+        <themes:SystemDropShadowChrome Color="#ccc"
+                                       Grid.Column="1"
+                                       Margin="-10,0,0,10"
+                                       Width="20"
+                                       HorizontalAlignment="Left" />
+        <Border Grid.Column="1"
+                Background="White"
+                Padding="0,10,10,10">
+            <Frame Name="ContentFrame"
+                   Source="{Binding ElementName=PageList, Path=SelectedValue}"
+                   NavigationUIVisibility="Hidden" />
+        </Border>
+
+    </Grid>
+</UserControl>

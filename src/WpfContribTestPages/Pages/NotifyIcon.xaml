@@ -1,0 +1,52 @@
+﻿<Page x:Class="WpfContribTest.Pages.NotifyIconDemo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:av="http://schemas.codeplex.com/wpfcontrib/xaml/presentation"
+      Title="NotifyIcon">
+    <Page.Resources>
+        <Storyboard x:Key="IconAnimation">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Icon" Storyboard.TargetName="notifyIcon"
+                                           Duration="0:0:2" RepeatBehavior="Forever">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <ImageSource>/WpfContribTestPages;component/Images/S1.ico</ImageSource>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1">
+                    <DiscreteObjectKeyFrame.Value>
+                        <ImageSource>/WpfContribTestPages;component/Images/S2.ico</ImageSource>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+    <DockPanel>
+        <TextBlock TextWrapping="Wrap" DockPanel.Dock="Top"
+                   Text="NotifyIcon is a new implementation of the notification icon component from Windows Forms. The major difference is the support for various WPF features, such as dependency properies, routed events and a WPF-based context menu. It is animated using a storyboard with an ObjectAnimationUsingKeyFrames." />
+        <StackPanel Margin="20">
+            <Button Name="b" Content="Show Balloon" Click="Button_Click" HorizontalAlignment="Left" Margin="2" />
+
+            <CheckBox Content="Animate Icon" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"
+                      HorizontalAlignment="Left" Margin="2" />
+
+            <av:NotifyIcon Name="notifyIcon" Icon="/WpfContribTestPages;component/Properties/App.ico"
+                           Text="NotifyIcon Demo"
+                           IconVisibility="Visible">
+                <FrameworkElement.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Some Text" />
+                        <MenuItem>
+                            <MenuItem.Header>
+                                <Grid>
+                                    <Ellipse StrokeThickness="2" Stroke="Red" />
+                                    <TextBlock av:BindingHelpers.Inlines="[b]WPF[/] Content" />
+                                </Grid>
+                            </MenuItem.Header>
+                        </MenuItem>
+                    </ContextMenu>
+                </FrameworkElement.ContextMenu>
+            </av:NotifyIcon>
+
+        </StackPanel>
+    </DockPanel>
+</Page>

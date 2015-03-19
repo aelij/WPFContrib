@@ -1,0 +1,71 @@
+﻿<Page x:Class="WpfContribTest.Pages.Introduction"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      d:DesignHeight="500"
+      d:DesignWidth="500"
+      Title="Introduction">
+    <Border>
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="Transparent" Offset="0" />
+                <GradientStop Color="Crimson" Offset="1" />
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Grid>
+            <TextBlock Margin="10">
+                <Bold FontSize="16">Welcome to the WPF Contrib Library</Bold>
+                <Run>(March 2014)</Run>
+                <LineBreak />
+                Please select a demo from the left.
+            </TextBlock>
+            <Border Width="256"
+                    Height="260">
+                <Grid Name="LogoInt" Width="248" Height="224">
+                    <Grid Margin="0">
+                        <Path Opacity="1" RenderTransformOrigin="0.526354898459016,0.499997692449065"
+                              Visibility="Visible" Stretch="Fill" StrokeThickness="4" x:Name="WhiteLayer"
+                              Fill="White"
+                              Stroke="Gray"
+                              Data="F1 M85.334503,79.666496 C159.61681,79.666496 219.8345,126.75137 219.8345,184.8335 219.8345,242.91563 159.61681,290.00049 85.334503,290.00049 C60.138317,290.00049 36.560307,284.58322 16.455292,275.04224 C6.9048123,248.43103 1.5,217.63823 1.5000001,184.83299 C1.5,152.02826 6.9046459,121.23592 16.454826,94.624962 C36.559944,85.083847 60.138123,79.666496 85.334503,79.666496 z">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    <SkewTransform AngleX="0" AngleY="0" />
+                                    <RotateTransform Angle="90" />
+                                    <TranslateTransform X="0" Y="0" />
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                        <Path Opacity="1" RenderTransformOrigin="0.526802465343027,0.499997685324003" Stretch="Fill"
+                              StrokeThickness="1.5" x:Name="BlueLayer"
+                              Data="F1 M78.75901,86.752747 L165.62912,86.752747 C163.05687,125.6938 126.2245,157.35135 78.75901,162.84941 L78.75901,86.752747 z M0.66531348,86.752747 L71.25901,86.752747 71.25901,163.52736 C68.769234,163.7579 66.249634,163.832 63.708374,163.832 44.561031,163.832 26.643387,159.62531 11.36498,152.21637 4.5447655,132.79744 0.94814861,110.51102 0.66531348,86.752747 z M78.75901,1.4825896 C126.09159,6.9649749 162.85046,38.461086 165.60847,77.252747 L78.75901,77.252747 78.75901,1.4825896 z M63.708374,0.50000161 L71.25901,0.8046397 71.25901,77.252747 0.67704874,77.252747 C0.98111969,53.616718 4.5758376,31.445681 11.364624,12.115795 26.643112,4.7067714 44.560883,0.50000107 63.708374,0.50000161 z"
+                              Margin="29.25,20.5,26.121,28.502">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                    <SkewTransform AngleX="0" AngleY="0" />
+                                    <RotateTransform Angle="90" />
+                                    <TranslateTransform X="0.26317744922954489" Y="-0.26317744922951647" />
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                            <Path.Fill>
+                                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                    <GradientStop Color="#FF619BFF" Offset="0.87" />
+                                </LinearGradientBrush>
+                            </Path.Fill>
+                            <Path.Stroke>
+                                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                    <GradientStop Color="#FF719DEC" Offset="0.999" />
+                                </LinearGradientBrush>
+                            </Path.Stroke>
+                        </Path>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Page>

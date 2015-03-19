@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TaskDialog_NoParent" xml:space="preserve">
+    <value>Cannot show a TaskDialog that already has a parent.</value>
+  </data>
+  <data name="TaskDialogButtonData_SetStandardButton" xml:space="preserve">
+    <value>Cannot set properties on a standard button.</value>
+  </data>
+  <data name="TaskDialogButtonData_ButtonSingleValue" xml:space="preserve">
+    <value>Button must be a single value.</value>
+  </data>
+  <data name="TaskDialog_WindowTitle" xml:space="preserve">
+    <value>Window Title</value>
+  </data>
+  <data name="TaskDialog_MainInstruction" xml:space="preserve">
+    <value>Main Instruction</value>
+  </data>
+  <data name="TaskDialog_Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="TaskDialog_ExpandedInformation" xml:space="preserve">
+    <value>Expanded Information</value>
+  </data>
+  <data name="TaskDialog_RadioButtons" xml:space="preserve">
+    <value>Radio Buttons</value>
+  </data>
+  <data name="TaskDialog_CommandLinks" xml:space="preserve">
+    <value>Command Links</value>
+  </data>
+  <data name="TaskDialog_Buttons" xml:space="preserve">
+    <value>Buttons</value>
+  </data>
+  <data name="TaskDialog_Footer" xml:space="preserve">
+    <value>Footer</value>
+  </data>
+  <data name="NotifyIcon_NoNegativeTimeout" xml:space="preserve">
+    <value>Timeout cannot be negative.</value>
+  </data>
+  <data name="IAddChild_TextOnly" xml:space="preserve">
+    <value>Cannot add non-text children.</value>
+  </data>
+  <data name="EnumResourceTypeConverter_InvalidResourceManager" xml:space="preserve">
+    <value>Invalid resource manager.</value>
+  </data>
+  <data name="ArgumentValidator_NotNullOrEmptyString" xml:space="preserve">
+    <value>String cannot be null or empty.</value>
+  </data>
+  <data name="ArgumentValidator_EnumValueIsDefined" xml:space="preserve">
+    <value>Invalid enum value.</value>
+  </data>
+  <data name="ArgumentValidator_TypeIsAssignableFromType" xml:space="preserve">
+    <value>Incompatible type</value>
+  </data>
+  <data name="IAnimationCalculator_CreationFailed" xml:space="preserve">
+    <value>CreateCalculator implementation must return a value.</value>
+  </data>
+  <data name="KeyFramesAnimationBase_ChildNotKeyFrame" xml:space="preserve">
+    <value>Child must be a {0}KeyFrame.</value>
+    <comment>{0} is typeof(T) in KeyFramesAnimationBase&lt;T&gt;</comment>
+  </data>
+  <data name="IAddChild_NoText" xml:space="preserve">
+    <value>Cannot add text children.</value>
+  </data>
+  <data name="LinearAnimationBase_InvalidDefaultValue" xml:space="preserve">
+    <value>Invalid default value.</value>
+  </data>
+  <data name="DependencyHelpers_IncompatibleDPType" xml:space="preserve">
+    <value>Type of dependency property is incompatible with value.</value>
+  </data>
+  <data name="TypeExtension_ArgumentsWrongOrder" xml:space="preserve">
+    <value>Type arguments need to be specified in the right order.</value>
+  </data>
+  <data name="TypeExtension_TypeOrNameMissing" xml:space="preserve">
+    <value>Must specify Type or TypeName.</value>
+  </data>
+  <data name="TypeExtension_NoIXamlTypeResolver" xml:space="preserve">
+    <value>Cannot retrieve IXamlTypeResolver.</value>
+  </data>
+  <data name="TypeExtension_InvalidTypeNameArgumentCount" xml:space="preserve">
+    <value>Invalid type argument count in type name.</value>
+  </data>
+  <data name="TypeExtension_InvalidTypeName" xml:space="preserve">
+    <value>Invalid type name.</value>
+  </data>
+  <data name="TypeExtension_InvalidTypeArgumentCount" xml:space="preserve">
+    <value>Invalid type argument count in type.</value>
+  </data>
+  <data name="UIHelpers_NoDispatcher" xml:space="preserve">
+    <value>Unable to find a Dispatcher.</value>
+  </data>
+  <data name="EnumHelper_InvalidObjectType" xml:space="preserve">
+    <value>Unrecognized enum type.</value>
+  </data>
+  <data name="TaskDialogButtons_Cancel" xml:space="preserve">
+    <value>_Cancel</value>
+  </data>
+  <data name="TaskDialogButtons_Close" xml:space="preserve">
+    <value>C_lose</value>
+  </data>
+  <data name="TaskDialogButtons_No" xml:space="preserve">
+    <value>_No</value>
+  </data>
+  <data name="TaskDialogButtons_OK" xml:space="preserve">
+    <value>_OK</value>
+  </data>
+  <data name="TaskDialogButtons_Retry" xml:space="preserve">
+    <value>_Retry</value>
+  </data>
+  <data name="TaskDialogButtons_Yes" xml:space="preserve">
+    <value>_Yes</value>
+  </data>
+  <data name="Animator_PropertyMustBeDouble" xml:space="preserve">
+    <value>Property type must be System.Double.</value>
+  </data>
+  <data name="Animator_TargetMustBeIAnimatable" xml:space="preserve">
+    <value>Target must be an IAnimatable</value>
+  </data>
+</root>
