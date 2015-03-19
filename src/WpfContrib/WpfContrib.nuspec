@@ -8,7 +8,7 @@
     <owners>$author$</owners>
     <licenseUrl>https://raw.githubusercontent.com/aelij/WPFContrib/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/aelij/WPFContrib/</projectUrl>
-    <iconUrl>http://download.codeplex.com/Download?ProjectName=wpfcontrib&amp;DownloadId=45634&amp;Build=20885</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/aelij/WPFContrib/master/src/WpfContribTest/Properties/App.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes></releaseNotes>
