@@ -118,6 +118,8 @@ namespace Avalon.Windows.Controls
             {
                 _isEnabled = true;
             }
+            if (_collection == null)
+                _isEnabled = false;
         }
 
         /// <summary>
