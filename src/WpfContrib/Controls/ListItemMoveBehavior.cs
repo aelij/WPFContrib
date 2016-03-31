@@ -103,7 +103,7 @@ namespace Avalon.Windows.Controls
             _collection = _itemsControl.ItemsSource as IList;
             if (_collection == null)
             {
-                var collectionView = _collection as ICollectionView;
+                var collectionView = _itemsControl.ItemsSource as ICollectionView;
                 if (collectionView != null)
                 {
                     _collection = collectionView.SourceCollection as IList;
