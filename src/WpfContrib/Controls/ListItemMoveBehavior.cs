@@ -202,7 +202,14 @@ namespace Avalon.Windows.Controls
                         _lastIndex = _collection.IndexOf(item);
                         if (sourceIndex != _lastIndex)
                         {
-                            _moveMethod.Invoke(_collection, new object[] { sourceIndex, _lastIndex });
+                            if (_moveMethod != null)
+                                _moveMethod.Invoke(_collection, new object[] { sourceIndex, _lastIndex });
+                            else
+                            {
+                                var oldItem = _collection[sourceIndex];
+                                _collection.RemoveAt(sourceIndex);
+                                _collection.Insert(_lastIndex,oldItem);
+                             }
                             _lastMove = now;
                         }
                     }
