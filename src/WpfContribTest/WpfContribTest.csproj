@@ -54,7 +54,7 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>AC5C9D2D5395744EC9FA5861F38FA859A84F704A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>DB794FBDC173BCFE70C76F4D07CEA44D3FAD1B84</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>WpfContribTest_TemporaryKey.pfx</ManifestKeyFile>
@@ -63,7 +63,7 @@
     <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>Internet</TargetZone>
@@ -126,9 +126,9 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <None Include="WpfContribTest_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <AppDesigner Include="Properties\" />
+    <None Include="WpfContribTest_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WpfContribTestPages\WpfContribTestPages.csproj">

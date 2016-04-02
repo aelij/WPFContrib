@@ -18,7 +18,7 @@
         <Grid>
             <TextBlock Margin="10">
                 <Bold FontSize="16">Welcome to the WPF Contrib Library</Bold>
-                <Run>(March 2014)</Run>
+                <Run x:Name="Version"></Run>
                 <LineBreak />
                 Please select a demo from the left.
             </TextBlock>

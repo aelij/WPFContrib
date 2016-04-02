@@ -18,9 +18,9 @@
     <HostInBrowser>true</HostInBrowser>
     <TargetZone>Internet</TargetZone>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
     <ManifestKeyFile>WpfContribTestBrowser_TemporaryKey.pfx</ManifestKeyFile>
-    <ManifestCertificateThumbprint>8213BD846C23739AE0225E57C717C26C5FFED5D3</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A8AA3D89528F67DF9CDBAF2F222B7DB595A5E002</ManifestCertificateThumbprint>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -106,9 +106,9 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <None Include="WpfContribTestBrowser_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <AppDesigner Include="Properties\" />
+    <None Include="WpfContribTestBrowser_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WpfContribTestPages\WpfContribTestPages.csproj">

@@ -8,6 +8,7 @@
         public Introduction()
         {
             InitializeComponent();
+            Version.Text = typeof(Avalon.Windows.Controls.TaskDialog).Assembly.GetName().Version.ToString();
         }
     }
 }
