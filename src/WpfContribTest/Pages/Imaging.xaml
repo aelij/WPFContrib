@@ -14,10 +14,10 @@
             <TextBlock Margin="0,5,0,0" Text="Displays a single image from a strip." />
 
             <TextBlock Margin="0,10,0,5" Text="Original image:" />
-            <Image Source="/WpfContribTestPages;component/Images/Spinner.png" />
+            <Image Source="/WpfContribTest;component/Images/Spinner.png" />
 
             <TextBlock Margin="0,10,0,5" Text="Animated using ImageStrip:" />
-            <av:ImageStrip Image="/WpfContribTestPages;component/Images/Spinner.png" FrameSize="20" Width="20"
+            <av:ImageStrip Image="/WpfContribTest;component/Images/Spinner.png" FrameSize="20" Width="20"
                            Height="20">
                 <FrameworkElement.Triggers>
                     <EventTrigger RoutedEvent="FrameworkElement.Loaded">
@@ -37,10 +37,10 @@
             <TextBlock Margin="0,5,0,0" Text="Renders a border using a nine-grid image." />
 
             <TextBlock Margin="0,10,0,5" Text="Original image:" />
-            <Image Source="/WpfContribTestPages;component/Images/Shadow.png" Stretch="None" />
+            <Image Source="/WpfContribTest;component/Images/Shadow.png" Stretch="None" />
 
             <TextBlock Margin="0,10,0,5" Text="Around a button:" />
-            <av:NineGridBorder Image="/WpfContribTestPages;component/Images/Shadow.png" ImageMargin="16"
+            <av:NineGridBorder Image="/WpfContribTest;component/Images/Shadow.png" ImageMargin="16"
                                Padding="16">
                 <Button Content="Shadow around me" Height="100" />
             </av:NineGridBorder>

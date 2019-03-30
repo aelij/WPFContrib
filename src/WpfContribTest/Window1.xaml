@@ -1,7 +1,7 @@
 ﻿<Window x:Class="WpfContribTest.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:wpfContribTest1="clr-namespace:WpfContribTest;assembly=WpfContribTestPages"
+        xmlns:wpfContribTest1="clr-namespace:WpfContribTest"
         Title="WPF Contrib Demo" Height="600" Width="800">
     <wpfContribTest1:Main />
 </Window>

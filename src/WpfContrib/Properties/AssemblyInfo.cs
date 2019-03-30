@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
 using System.Security;
@@ -9,13 +8,6 @@ using System.Windows.Markup;
 [assembly: CLSCompliant(true)]
 [assembly: ComVisible(false)]
 [assembly: AllowPartiallyTrustedCallers]
-[assembly: AssemblyTitle("WPF Contrib")]
-[assembly: AssemblyDescription("WPF Contrib")]
-[assembly: AssemblyCompany("Eli Arbel")]
-[assembly: AssemblyProduct("WPF Contrib")]
-[assembly: AssemblyCopyright("Copyright 2015")]
-[assembly: AssemblyVersion("2.3.0.0")]
-[assembly: AssemblyFileVersion("2.3.0.0")]
 [assembly: NeutralResourcesLanguage("en-US")]
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, // theme-specific

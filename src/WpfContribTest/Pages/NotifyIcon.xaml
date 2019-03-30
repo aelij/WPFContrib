@@ -9,12 +9,12 @@
                                            Duration="0:0:2" RepeatBehavior="Forever">
                 <DiscreteObjectKeyFrame KeyTime="0:0:0">
                     <DiscreteObjectKeyFrame.Value>
-                        <ImageSource>/WpfContribTestPages;component/Images/S1.ico</ImageSource>
+                        <ImageSource>/WpfContribTest;component/Images/S1.ico</ImageSource>
                     </DiscreteObjectKeyFrame.Value>
                 </DiscreteObjectKeyFrame>
                 <DiscreteObjectKeyFrame KeyTime="0:0:1">
                     <DiscreteObjectKeyFrame.Value>
-                        <ImageSource>/WpfContribTestPages;component/Images/S2.ico</ImageSource>
+                        <ImageSource>/WpfContribTest;component/Images/S2.ico</ImageSource>
                     </DiscreteObjectKeyFrame.Value>
                 </DiscreteObjectKeyFrame>
             </ObjectAnimationUsingKeyFrames>
@@ -29,7 +29,7 @@
             <CheckBox Content="Animate Icon" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"
                       HorizontalAlignment="Left" Margin="2" />
 
-            <av:NotifyIcon Name="notifyIcon" Icon="/WpfContribTestPages;component/Properties/App.ico"
+            <av:NotifyIcon Name="notifyIcon" Icon="/WpfContribTest;component/Properties/App.ico"
                            Text="NotifyIcon Demo"
                            IconVisibility="Visible">
                 <FrameworkElement.ContextMenu>

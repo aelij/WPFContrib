@@ -13,7 +13,7 @@
                        Width="32"
                        Height="32"
                        Stretch="Uniform"
-                       Source="/WpfContribTestPages;component/Properties/App.ico" />
+                       Source="/WpfContribTest;component/Properties/App.ico" />
                 <StackPanel>
                     <TextBlock Text="{Binding Name}"
                                FontWeight="Bold" />
