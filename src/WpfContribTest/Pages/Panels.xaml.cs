@@ -1,15 +1,12 @@
-﻿using System.Windows.Controls;
+﻿namespace WpfContribTest.Pages;
 
-namespace WpfContribTest.Pages
+/// <summary>
+///     Interaction logic for Panels.xaml
+/// </summary>
+public partial class Panels : Page
 {
-    /// <summary>
-    ///     Interaction logic for Panels.xaml
-    /// </summary>
-    public partial class Panels : Page
+    public Panels()
     {
-        public Panels()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

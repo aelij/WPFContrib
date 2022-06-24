@@ -1,15 +1,12 @@
-﻿using System.Windows.Controls;
+﻿namespace WpfContribTest.Pages;
 
-namespace WpfContribTest.Pages
+/// <summary>
+///     Interaction logic for AvalonStyle.xaml
+/// </summary>
+public partial class AvalonStyle : Page
 {
-    /// <summary>
-    ///     Interaction logic for AvalonStyle.xaml
-    /// </summary>
-    public partial class AvalonStyle : Page
+    public AvalonStyle()
     {
-        public AvalonStyle()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

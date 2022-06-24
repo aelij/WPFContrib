@@ -1,18 +1,16 @@
-﻿// ReSharper disable once CheckNamespace
-namespace Avalon.Windows.Internal.Utility
-{
-    internal static class BooleanBoxes
-    {
-        internal static readonly object FalseBox = false;
-        internal static readonly object TrueBox = true;
+﻿namespace Avalon.Windows.Internal.Utility;
 
-        internal static object Box(this bool value)
+internal static class BooleanBoxes
+{
+    public static readonly object FalseBox = false;
+    public static readonly object TrueBox = true;
+
+    internal static object Box(this bool value)
+    {
+        if (value)
         {
-            if (value)
-            {
-                return TrueBox;
-            }
-            return FalseBox;
+            return TrueBox;
         }
+        return FalseBox;
     }
 }

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Resources;
+﻿using System.Resources;
 using System.Runtime.InteropServices;
-using System.Security;
-using System.Windows;
 using System.Windows.Markup;
 
 [assembly: CLSCompliant(true)]
 [assembly: ComVisible(false)]
-[assembly: AllowPartiallyTrustedCallers]
 [assembly: NeutralResourcesLanguage("en-US")]
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, // theme-specific

@@ -11,7 +11,7 @@
         <Setter Property="Padding"
                 Value="16" />
         <Setter Property="Image"
-                Value="/AvalonLibrary;component/Images/DropShadow.png" />
+                Value="/WpfContrib;component/Images/DropShadow.png" />
         <Setter Property="ImageMargin"
                 Value="16" />
     </Style>

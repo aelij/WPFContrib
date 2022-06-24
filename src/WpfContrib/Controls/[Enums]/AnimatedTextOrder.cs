@@ -1,23 +1,22 @@
-﻿namespace Avalon.Windows.Controls
+﻿namespace Avalon.Windows.Controls;
+
+/// <summary>
+///     Specifies the order of the animation in the <see cref="AnimatedTextBlock" /> control.
+/// </summary>
+public enum AnimatedTextOrder
 {
     /// <summary>
-    ///     Specifies the order of the animation in the <see cref="AnimatedTextBlock" /> control.
+    ///     Forward
     /// </summary>
-    public enum AnimatedTextOrder
-    {
-        /// <summary>
-        ///     Forward
-        /// </summary>
-        Forward,
+    Forward,
 
-        /// <summary>
-        ///     Backward
-        /// </summary>
-        Backward,
+    /// <summary>
+    ///     Backward
+    /// </summary>
+    Backward,
 
-        /// <summary>
-        ///     Random
-        /// </summary>
-        Random
-    }
+    /// <summary>
+    ///     Random
+    /// </summary>
+    Random
 }

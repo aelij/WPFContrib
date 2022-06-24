@@ -54,7 +54,7 @@
 
         <Border>
             <FrameworkElement.Resources>
-                <ResourceDictionary Source="/AvalonLibrary;component/themes/avalon.xaml" />
+                <ResourceDictionary Source="/WpfContrib;component/themes/avalon.xaml" />
             </FrameworkElement.Resources>
             <ListBox Name="PageList"
                      SelectedIndex="0"

@@ -1,71 +1,57 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Controls;
+﻿namespace Avalon.Windows.Controls;
 
-namespace Avalon.Windows.Controls
+/// <summary>
+///     Contains a list of selectable items, wrapped in the specified container type.
+/// </summary>
+public class TypedListBox : ListBox
 {
     /// <summary>
-    ///     Contains a list of selectable items, wrapped in the specified container type.
+    ///     Gets or sets the type of the item container.
     /// </summary>
-    public class TypedListBox : ListBox
+    /// <value>The type of the item container.</value>
+    public Type ItemContainerType
     {
-        #region Dependency Properties
+        get { return (Type)GetValue(ItemContainerTypeProperty); }
+        set { SetValue(ItemContainerTypeProperty, value); }
+    }
 
-        /// <summary>
-        ///     Gets or sets the type of the item container.
-        /// </summary>
-        /// <value>The type of the item container.</value>
-        public Type ItemContainerType
+    /// <summary>
+    ///     Identifies the <see cref="ItemContainerType" /> dependency property.
+    /// </summary>
+    public static readonly DependencyProperty ItemContainerTypeProperty =
+        TypedItemsControl.ItemContainerTypeProperty.AddOwner(typeof(TypedListBox));
+    /// <summary>
+    ///     Creates or identifies the element that is used to display the given item.
+    /// </summary>
+    /// <returns>
+    ///     The element that is used to display the given item.
+    /// </returns>
+    protected override DependencyObject GetContainerForItemOverride()
+    {
+        Type type = ItemContainerType;
+        if (type == null)
         {
-            get { return (Type) GetValue(ItemContainerTypeProperty); }
-            set { SetValue(ItemContainerTypeProperty, value); }
+            return base.GetContainerForItemOverride();
         }
 
-        /// <summary>
-        ///     Identifies the <see cref="ItemContainerType" /> dependency property.
-        /// </summary>
-        public static readonly DependencyProperty ItemContainerTypeProperty =
-            TypedItemsControl.ItemContainerTypeProperty.AddOwner(typeof (TypedListBox));
+        return (DependencyObject)Activator.CreateInstance(type);
+    }
 
-        #endregion
-
-        #region Overrides
-
-        /// <summary>
-        ///     Creates or identifies the element that is used to display the given item.
-        /// </summary>
-        /// <returns>
-        ///     The element that is used to display the given item.
-        /// </returns>
-        protected override DependencyObject GetContainerForItemOverride()
+    /// <summary>
+    ///     Determines if the specified item is (or is eligible to be) its own container.
+    /// </summary>
+    /// <param name="item">The item to check.</param>
+    /// <returns>
+    ///     true if the item is (or is eligible to be) its own container; otherwise, false.
+    /// </returns>
+    protected override bool IsItemItsOwnContainerOverride(object item)
+    {
+        Type type = ItemContainerType;
+        if (type == null || item == null)
         {
-            Type type = ItemContainerType;
-            if (type == null)
-            {
-                return base.GetContainerForItemOverride();
-            }
-
-            return (DependencyObject) Activator.CreateInstance(type);
+            return base.IsItemItsOwnContainerOverride(item);
         }
 
-        /// <summary>
-        ///     Determines if the specified item is (or is eligible to be) its own container.
-        /// </summary>
-        /// <param name="item">The item to check.</param>
-        /// <returns>
-        ///     true if the item is (or is eligible to be) its own container; otherwise, false.
-        /// </returns>
-        protected override bool IsItemItsOwnContainerOverride(object item)
-        {
-            Type type = ItemContainerType;
-            if (type == null || item == null)
-            {
-                return base.IsItemItsOwnContainerOverride(item);
-            }
-
-            return type.IsInstanceOfType(item);
-        }
-
-        #endregion
+        return type.IsInstanceOfType(item);
     }
 }

@@ -1,33 +1,30 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 
-// ReSharper disable once CheckNamespace
-namespace Avalon.Internal.Utility
+namespace Avalon.Internal.Utility;
+
+internal static class UriHelper
 {
-    internal static class UriHelper
+    public static Uri MakePackUri(string relativeFile)
     {
-        public static Uri MakePackUri(string relativeFile)
-        {
-            string uriString = "pack://application:,,,/" + AssemblyShortName + ";component/" + relativeFile;
-            return new Uri(uriString);
-        }
+        string uriString = "pack://application:,,,/" + AssemblyShortName + ";component/" + relativeFile;
+        return new Uri(uriString);
+    }
 
-        private static string _assemblyShortName;
+    private static string s_assemblyShortName;
 
-        private static string AssemblyShortName
+    private static string AssemblyShortName
+    {
+        get
         {
-            get
+            if (s_assemblyShortName == null)
             {
-                if (_assemblyShortName == null)
-                {
-                    Assembly assembly = typeof (UriHelper).Assembly;
+                Assembly assembly = typeof(UriHelper).Assembly;
 
-                    // pull out the short name
-                    _assemblyShortName = assembly.ToString().Split(',')[0];
-                }
-
-                return _assemblyShortName;
+                // pull out the short name
+                s_assemblyShortName = assembly.ToString().Split(',')[0];
             }
+
+            return s_assemblyShortName;
         }
     }
 }

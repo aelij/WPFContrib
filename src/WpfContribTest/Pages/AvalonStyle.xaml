@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Avalon Style">
     <Page.Resources>
-        <ResourceDictionary Source="/AvalonLibrary;component/themes/avalon.xaml" />
+        <ResourceDictionary Source="/WpfContrib;component/themes/avalon.xaml" />
     </Page.Resources>
     <DockPanel>
         <TextBlock DockPanel.Dock="Top" Margin="20" Text="A recreation of the original Avalon theme." />

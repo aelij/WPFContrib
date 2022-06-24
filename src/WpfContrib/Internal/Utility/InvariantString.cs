@@ -1,13 +1,11 @@
 ﻿using System.Globalization;
 
-// ReSharper disable once CheckNamespace
-namespace Avalon.Internal.Utility
+namespace Avalon.Internal.Utility;
+
+internal static class InvariantString
 {
-    internal static class InvariantString
+    public static string Format(string format, params object[] args)
     {
-        public static string Format(string format, params object[] args)
-        {
-            return string.Format(CultureInfo.InvariantCulture, format, args);
-        }
+        return string.Format(CultureInfo.InvariantCulture, format, args);
     }
 }

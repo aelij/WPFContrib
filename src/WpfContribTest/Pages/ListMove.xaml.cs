@@ -1,18 +1,16 @@
 ﻿using System.Collections.ObjectModel;
-using System.Linq;
 
-namespace WpfContribTest.Pages
+namespace WpfContribTest.Pages;
+
+/// <summary>
+/// Interaction logic for ListMove.xaml
+/// </summary>
+public partial class ListMove
 {
-    /// <summary>
-    /// Interaction logic for ListMove.xaml
-    /// </summary>
-    public partial class ListMove
+    public ListMove()
     {
-        public ListMove()
-        {
-            InitializeComponent();
+        InitializeComponent();
 
-            TheList.ItemsSource = new ObservableCollection<int>(Enumerable.Range(1, 100));
-        }
+        TheList.ItemsSource = new ObservableCollection<int>(Enumerable.Range(1, 100));
     }
 }

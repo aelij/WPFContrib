@@ -1,12 +1,11 @@
-namespace Avalon.Windows.Media.Animation
+namespace Avalon.Windows.Media.Animation;
+
+internal enum AnimationType : byte
 {
-    internal enum AnimationType : byte
-    {
-        Automatic = 0,
-        By = 3,
-        From = 1,
-        FromBy = 5,
-        FromTo = 4,
-        To = 2
-    }
+    Automatic = 0,
+    By = 3,
+    From = 1,
+    FromBy = 5,
+    FromTo = 4,
+    To = 2
 }

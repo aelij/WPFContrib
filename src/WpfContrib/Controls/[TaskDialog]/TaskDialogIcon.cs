@@ -1,38 +1,37 @@
-﻿namespace Avalon.Windows.Controls
+﻿namespace Avalon.Windows.Controls;
+
+/// <summary>
+///     Specifies an icon for <see cref="TaskDialog" />.
+/// </summary>
+public enum TaskDialogIcon
 {
     /// <summary>
-    ///     Specifies an icon for <see cref="TaskDialog" />.
+    ///     No icon.
     /// </summary>
-    public enum TaskDialogIcon
-    {
-        /// <summary>
-        ///     No icon.
-        /// </summary>
-        None,
+    None,
 
-        /// <summary>
-        ///     Warning icon.
-        /// </summary>
-        Warning,
+    /// <summary>
+    ///     Warning icon.
+    /// </summary>
+    Warning,
 
-        /// <summary>
-        ///     Error icon.
-        /// </summary>
-        Error,
+    /// <summary>
+    ///     Error icon.
+    /// </summary>
+    Error,
 
-        /// <summary>
-        ///     Information icon.
-        /// </summary>
-        Information,
+    /// <summary>
+    ///     Information icon.
+    /// </summary>
+    Information,
 
-        /// <summary>
-        ///     Question icon.
-        /// </summary>
-        Question,
+    /// <summary>
+    ///     Question icon.
+    /// </summary>
+    Question,
 
-        /// <summary>
-        ///     Shield icon.
-        /// </summary>
-        Shield
-    }
+    /// <summary>
+    ///     Shield icon.
+    /// </summary>
+    Shield
 }

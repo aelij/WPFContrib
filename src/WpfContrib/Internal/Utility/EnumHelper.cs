@@ -1,30 +1,14 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 using Avalon.Windows;
 
-// ReSharper disable once CheckNamespace
-namespace Avalon.Internal.Utility
+namespace Avalon.Internal.Utility;
+
+internal static class EnumHelper
 {
-    internal static class EnumHelper
+    public static ulong ToUInt64(object value) => Convert.GetTypeCode(value) switch
     {
-        public static ulong ToUInt64(object value)
-        {
-            switch (Convert.GetTypeCode(value))
-            {
-                case TypeCode.SByte:
-                case TypeCode.Int16:
-                case TypeCode.Int32:
-                case TypeCode.Int64:
-                    return (ulong) Convert.ToInt64(value, CultureInfo.InvariantCulture);
-
-                case TypeCode.Byte:
-                case TypeCode.UInt16:
-                case TypeCode.UInt32:
-                case TypeCode.UInt64:
-                    return Convert.ToUInt64(value, CultureInfo.InvariantCulture);
-            }
-
-            throw new InvalidOperationException(SR.EnumHelper_InvalidObjectType);
-        }
-    }
+        TypeCode.SByte or TypeCode.Int16 or TypeCode.Int32 or TypeCode.Int64 => (ulong)Convert.ToInt64(value, CultureInfo.InvariantCulture),
+        TypeCode.Byte or TypeCode.UInt16 or TypeCode.UInt32 or TypeCode.UInt64 => Convert.ToUInt64(value, CultureInfo.InvariantCulture),
+        _ => throw new InvalidOperationException(SR.EnumHelper_InvalidObjectType),
+    };
 }

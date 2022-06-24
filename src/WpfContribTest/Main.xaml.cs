@@ -1,135 +1,93 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Security;
-using System.Security.Permissions;
-using System.Windows;
+﻿using System.Globalization;
 using System.Xml;
 using Avalon.Windows.Converters;
 using Microsoft.Win32;
 
-namespace WpfContribTest
+namespace WpfContribTest;
+
+/// <summary>
+///     Interaction logic for Window1.xaml
+/// </summary>
+public partial class Main
 {
-    /// <summary>
-    ///     Interaction logic for Window1.xaml
-    /// </summary>
-    public partial class Main
+    public Main()
     {
-        public Main()
+        InitializeComponent();
+
+        Loaded += Main_Loaded;
+    }
+
+    private void Main_Loaded(object sender, RoutedEventArgs e)
+    {
+    }
+}
+public class PageRequirementsConverter : ValueConverter
+{
+    private static readonly decimal s_maxVersion;
+    private static readonly int s_sp;
+
+    public bool AsText { get; set; }
+
+    static PageRequirementsConverter()
+    {
+        try
         {
-            InitializeComponent();
+            using RegistryKey key = Registry.LocalMachine.OpenSubKey(@"Software\Microsoft\NET Framework Setup\NDP");
+            IEnumerable<string> versions = key.GetSubKeyNames().Where(s => s.Length > 3 && s.StartsWith("v"));
+            decimal max = 0;
+            string maxString = null;
+            foreach (string version in versions)
+            {
+                if (decimal.TryParse(version.AsSpan(1, 3), out decimal v) && v > max)
+                {
+                    max = v;
+                    maxString = version;
+                }
+            }
+            if (max > 0)
+            {
+                s_maxVersion = max;
 
-            Loaded += Main_Loaded;
+                using RegistryKey versionKey = key.OpenSubKey(maxString);
+                s_sp = (int)versionKey.GetValue("SP", 0);
+            }
         }
-
-        private void Main_Loaded(object sender, RoutedEventArgs e)
+        catch
         {
         }
     }
 
-    #region Converters
-
-    public class PageRequirementsConverter : ValueConverter
+    public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        private static readonly bool _isFullTrust;
-        private static readonly decimal _maxVersion;
-        private static readonly int _sp;
-
-        public bool AsText { get; set; }
-
-        static PageRequirementsConverter()
+        if (value is not XmlElement elem || !decimal.TryParse(elem.GetAttribute("RequiresVersion"), out decimal requiresVersion))
         {
-            try
-            {
-                new SecurityPermission(PermissionState.Unrestricted).Demand();
-                _isFullTrust = true;
-            }
-            catch (SecurityException)
-            {
-            }
-
-            try
-            {
-                using (RegistryKey key = Registry.LocalMachine.OpenSubKey(@"Software\Microsoft\NET Framework Setup\NDP")
-                    )
-                {
-                    IEnumerable<string> versions = key.GetSubKeyNames().Where(s => s.Length > 3 && s.StartsWith("v"));
-                    decimal max = 0;
-                    string maxString = null;
-                    foreach (string version in versions)
-                    {
-                        decimal v;
-                        if (decimal.TryParse(version.Substring(1, 3), out v) && v > max)
-                        {
-                            max = v;
-                            maxString = version;
-                        }
-                    }
-                    if (max > 0)
-                    {
-                        _maxVersion = max;
-
-                        using (RegistryKey versionKey = key.OpenSubKey(maxString))
-                        {
-                            _sp = (int) versionKey.GetValue("SP", 0);
-                        }
-                    }
-                }
-            }
-            catch
-            {
-            }
+            return AsText ? null : true;
         }
 
-        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        _ = int.TryParse(elem.GetAttribute("RequiresSp"), out int requiresSp);
+
+        bool result = s_maxVersion > requiresVersion || (s_maxVersion == requiresVersion && s_sp >= requiresSp);
+        if (!result && AsText)
         {
-            XmlElement elem = value as XmlElement;
-            if (elem != null)
+            string stringResult = "Requires .NET " + requiresVersion;
+            if (s_maxVersion == requiresVersion && s_sp < requiresSp)
             {
-                bool requiresFullTrust = false;
-                bool.TryParse(elem.GetAttribute("RequiresFullTrust"), out requiresFullTrust);
-
-                if (requiresFullTrust && !_isFullTrust)
-                {
-                    return AsText ? "Requires full trust" : (object) false;
-                }
-
-                decimal requiresVersion;
-                if (decimal.TryParse(elem.GetAttribute("RequiresVersion"), out requiresVersion))
-                {
-                    int requiresSp;
-                    int.TryParse(elem.GetAttribute("RequiresSp"), out requiresSp);
-
-                    bool result = _maxVersion > requiresVersion || (_maxVersion == requiresVersion && _sp >= requiresSp);
-                    if (!result && AsText)
-                    {
-                        string stringResult = "Requires .NET " + requiresVersion;
-                        if (_maxVersion == requiresVersion && _sp < requiresSp)
-                        {
-                            stringResult += " SP" + requiresSp;
-                        }
-                        return stringResult;
-                    }
-                    return result;
-                }
+                stringResult += " SP" + requiresSp;
             }
-            return AsText ? null : (object) true;
+            return stringResult;
         }
+        return result;
     }
+}
 
-    public class NotNullConverter : ValueConverter
+public class NotNullConverter : ValueConverter
+{
+    public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        if (value is string s)
         {
-            string s = value as string;
-            if (s != null)
-            {
-                return s.Length > 0;
-            }
-            return value != null;
+            return s.Length > 0;
         }
+        return value != null;
     }
-
-    #endregion
 }

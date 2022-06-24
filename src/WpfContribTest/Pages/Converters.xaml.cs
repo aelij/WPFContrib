@@ -1,22 +1,19 @@
-﻿using System.Windows.Controls;
+﻿namespace WpfContribTest.Pages;
 
-namespace WpfContribTest.Pages
+/// <summary>
+///     Interaction logic for Converters.xaml
+/// </summary>
+public partial class Converters : Page
 {
-    /// <summary>
-    ///     Interaction logic for Converters.xaml
-    /// </summary>
-    public partial class Converters : Page
+    public Converters()
     {
-        public Converters()
-        {
-            InitializeComponent();
+        InitializeComponent();
 
-            DataContext = new DataClass {Color = "Red"};
-        }
+        DataContext = new DataClass { Color = "Red" };
+    }
 
-        public class DataClass
-        {
-            public string Color { get; set; }
-        }
+    public class DataClass
+    {
+        public string Color { get; set; }
     }
 }

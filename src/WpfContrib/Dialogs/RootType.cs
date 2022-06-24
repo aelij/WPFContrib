@@ -1,18 +1,17 @@
-﻿namespace Avalon.Windows.Dialogs
+﻿namespace Avalon.Windows.Dialogs;
+
+/// <summary>
+///     Specifies the type of the root folder in a <see cref="FolderBrowserDialog" />.
+/// </summary>
+public enum RootType
 {
     /// <summary>
-    ///     Specifies the type of the root folder in a <see cref="FolderBrowserDialog" />.
+    ///     Use <see cref="System.Environment.SpecialFolder" />.
     /// </summary>
-    public enum RootType
-    {
-        /// <summary>
-        ///     Use <see cref="System.Environment.SpecialFolder" />.
-        /// </summary>
-        SpecialFolder,
+    SpecialFolder,
 
-        /// <summary>
-        ///     Use a path.
-        /// </summary>
-        Path
-    }
+    /// <summary>
+    ///     Use a path.
+    /// </summary>
+    Path
 }
