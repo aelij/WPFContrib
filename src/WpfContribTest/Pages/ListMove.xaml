@@ -3,9 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:av="http://schemas.codeplex.com/wpfcontrib/xaml/presentation"
-      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-      xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+      xmlns:av="https://github.com/aelij/wpfcontrib"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       mc:Ignorable="d"
       d:DesignHeight="300"
       d:DesignWidth="300"
@@ -18,9 +17,9 @@
                 <ItemsPanelTemplate>
                     <StackPanel>
                         <i:Interaction.Behaviors>
-                            <ei:FluidMoveBehavior AppliesTo="Children"
+                            <i:FluidMoveBehavior AppliesTo="Children"
                                                   Duration="0:0:0.1">
-                            </ei:FluidMoveBehavior>
+                            </i:FluidMoveBehavior>
                         </i:Interaction.Behaviors>
                     </StackPanel>
                 </ItemsPanelTemplate>

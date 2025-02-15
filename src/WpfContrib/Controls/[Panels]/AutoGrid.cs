@@ -10,7 +10,7 @@ namespace Avalon.Windows.Controls;
 public class AutoGrid : Grid
 {
     /// <summary>
-    ///     A value of <c>true</c> forces children to be re-indexed at the next oportunity.
+    ///     A value of <c>true</c> forces children to be re-indexed at the next opportunity.
     /// </summary>
     private bool _shouldReindex = true;
 

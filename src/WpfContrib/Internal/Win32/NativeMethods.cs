@@ -14,7 +14,7 @@ internal static class NativeMethods
     public enum WindowLongValue
     {
         WndProc = -4,
-        HInstace = -6,
+        HInstance = -6,
         HwndParent = -8,
         Style = -16,
         ExtendedStyle = -20,
@@ -26,7 +26,7 @@ internal static class NativeMethods
     public enum WindowStyles
     {
         None = 0,
-        SysMemu = 0x80000,
+        SysMenu = 0x80000,
         MinimizeBox = 0x20000,
         MaximizeBox = 0x10000,
         ThickFrame = 0x40000

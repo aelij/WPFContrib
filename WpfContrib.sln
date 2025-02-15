@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28621.142
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfContrib", "WpfContrib\WpfContrib.csproj", "{2DCD57E7-46DC-4683-9AA6-5D8DC4E8D891}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfContrib", "src\WpfContrib\WpfContrib.csproj", "{2DCD57E7-46DC-4683-9AA6-5D8DC4E8D891}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfContribTest", "WpfContribTest\WpfContribTest.csproj", "{7F97A5C2-AD4D-484D-B7B4-EF3B70080178}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfContribTest", "src\WpfContribTest\WpfContribTest.csproj", "{7F97A5C2-AD4D-484D-B7B4-EF3B70080178}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

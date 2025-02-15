@@ -1,7 +1,24 @@
 <Project>
   <PropertyGroup>
+    <TargetFrameworks>net8.0-windows</TargetFrameworks>
+    <UseWpf>true</UseWpf>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Version>4.0.0</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Copyright>Copyright 2025</Copyright>
+    <Authors>aelij</Authors>
+ </PropertyGroup>
+  <PropertyGroup Condition=" '$(GITHUB_ACTIONS)' == 'true' ">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)\src\WpfContrib\Properties\Icon.png" Pack="true" PackagePath="\" Visible="false" />
+    <None Include="$(MSBuildThisFileDirectory)\README.md" Pack="true" PackagePath="\" Visible="false" />
+  </ItemGroup>
   <ItemGroup>
     <Using Include="System.ComponentModel" />
     <Using Include="System.IO" />
@@ -12,11 +29,5 @@
     <Using Include="System.Windows.Media" />
     <Using Include="System.Windows.Media.Animation" />
     <Using Include="System.Windows.Threading" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Roslynator.Analyzers" Version="4.1.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
   </ItemGroup>
 </Project>

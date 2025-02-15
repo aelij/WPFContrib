@@ -1,6 +1,0 @@
-﻿The effect ".fx" files require compilation using either the HLSL compiler from the DirectX SDK (fxc.exe)
-or by using the Shader Build Task, which can be found at http://codeplex.com/wpf.
-
-The compiled effect files (".ps") are provided here, but if you make changes to the ".fx" files,
-you will need to recompile them. If you use the Shader Build Task, you should delete the ".ps" files
-and set the ".fx" file's build action to "Effect".

@@ -6,7 +6,7 @@
 public enum TaskDialogExpansionPosition
 {
     /// <summary>
-    ///     None; the pane will not be displyed.
+    ///     None; the pane will not be displayed.
     /// </summary>
     None,
     /// <summary>

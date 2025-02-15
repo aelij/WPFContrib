@@ -551,9 +551,9 @@ public sealed class NotifyIcon : FrameworkElement, IDisposable, IAddChild
     /// </summary>
     public static readonly DependencyProperty TextProperty =
         DependencyProperty.Register("Text", typeof(string), typeof(NotifyIcon),
-            new FrameworkPropertyMetadata(OnTextPropertyChanged, OnCoerceTextProperty), ValidateTextPropety);
+            new FrameworkPropertyMetadata(OnTextPropertyChanged, OnCoerceTextProperty), ValidateTextProperty);
 
-    private static bool ValidateTextPropety(object baseValue)
+    private static bool ValidateTextProperty(object baseValue)
     {
         var value = (string)baseValue;
 

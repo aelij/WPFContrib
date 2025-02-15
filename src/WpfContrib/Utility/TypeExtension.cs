@@ -51,7 +51,7 @@ public class TypeExtension : MarkupExtension
     /// </summary>
     /// <param name="typeName">The type name.</param>
     /// <param name="typeArgument1">The first type argument.</param>
-    /// <param name="typeArgument2">The second type argumen2.</param>
+    /// <param name="typeArgument2">The second type argument.</param>
     public TypeExtension(string typeName, Type typeArgument1, Type typeArgument2)
         : this(typeName, typeArgument1)
     {

@@ -187,7 +187,7 @@ public abstract class ValueConverter : MarkupExtension, IValueConverter, IMultiV
     }
 
     /// <summary>
-    ///     Returns this instace.
+    ///     Returns this instance.
     /// </summary>
     /// <param name="serviceProvider">Object that can provide services for the markup extension.</param>
     /// <returns>

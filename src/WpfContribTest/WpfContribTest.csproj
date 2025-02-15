@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net6.0-windows</TargetFrameworks>
-    <UseWpf>true</UseWpf>
     <OutputType>WinExe</OutputType>
     <ApplicationIcon>Properties\App.ico</ApplicationIcon>
     <SignAssembly>true</SignAssembly>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Expression.Blend.Sdk.WPF" Version="1.0.1" NoWarn="NU1701" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WpfContrib\WpfContrib.csproj" />

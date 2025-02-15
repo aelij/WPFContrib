@@ -48,7 +48,7 @@ public class SplineCornerRadiusKeyFrame : SplineKeyFrame<CornerRadius>
     ///     also when the key frame ends.
     /// </param>
     /// <param name="keySpline">
-    ///     <see cref="KeySpline" /> for the key frame. The <see cref="KeySpline" /> represents a Bezier
+    ///     <see cref="KeySpline" /> for the key frame. The <see cref="KeySpline" /> represents a bezier
     ///     curve which defines animation progress of the key frame.
     /// </param>
     public SplineCornerRadiusKeyFrame(CornerRadius value, KeyTime keyTime, KeySpline keySpline)

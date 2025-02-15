@@ -9,9 +9,9 @@ using System.Windows.Markup;
     ResourceDictionaryLocation.None, // theme-specific
     ResourceDictionaryLocation.SourceAssembly // generic
     )]
-[assembly: XmlnsPrefix("http://schemas.codeplex.com/wpfcontrib/xaml/presentation", "av")]
-[assembly: XmlnsDefinition("http://schemas.codeplex.com/wpfcontrib/xaml/presentation", "Avalon.Windows.Controls")]
-[assembly: XmlnsDefinition("http://schemas.codeplex.com/wpfcontrib/xaml/presentation", "Avalon.Windows.Converters")]
-[assembly: XmlnsDefinition("http://schemas.codeplex.com/wpfcontrib/xaml/presentation", "Avalon.Windows.Media.Animation")]
-[assembly: XmlnsDefinition("http://schemas.codeplex.com/wpfcontrib/xaml/presentation", "Avalon.Windows.Media.Effects")]
-[assembly: XmlnsDefinition("http://schemas.codeplex.com/wpfcontrib/xaml/presentation", "Avalon.Windows.Utility")]
+[assembly: XmlnsPrefix("https://github.com/aelij/wpfcontrib", "av")]
+[assembly: XmlnsDefinition("https://github.com/aelij/wpfcontrib", "Avalon.Windows.Controls")]
+[assembly: XmlnsDefinition("https://github.com/aelij/wpfcontrib", "Avalon.Windows.Converters")]
+[assembly: XmlnsDefinition("https://github.com/aelij/wpfcontrib", "Avalon.Windows.Media.Animation")]
+[assembly: XmlnsDefinition("https://github.com/aelij/wpfcontrib", "Avalon.Windows.Media.Effects")]
+[assembly: XmlnsDefinition("https://github.com/aelij/wpfcontrib", "Avalon.Windows.Utility")]

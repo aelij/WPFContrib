@@ -1583,7 +1583,7 @@ public partial class TaskDialog : HeaderedContentControl
                     (NativeMethods.WindowStyles)
                         NativeMethods.GetWindowLong(hwnd, NativeMethods.WindowLongValue.Style);
                 _ = NativeMethods.SetWindowLong(hwnd, NativeMethods.WindowLongValue.Style,
-                    (IntPtr)(style ^ NativeMethods.WindowStyles.SysMemu));
+                    (IntPtr)(style ^ NativeMethods.WindowStyles.SysMenu));
             }
             else
             {

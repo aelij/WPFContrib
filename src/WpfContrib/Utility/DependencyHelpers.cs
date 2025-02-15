@@ -51,7 +51,7 @@ public static class DependencyHelpers
     }
 
     /// <summary>
-    ///     Sets the value of the <paramref name="property" /> only if it hasn't been explicitely set.
+    ///     Sets the value of the <paramref name="property" /> only if it hasn't been explicitly set.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="o">The object.</param>

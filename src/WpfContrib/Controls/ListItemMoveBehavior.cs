@@ -254,7 +254,7 @@ public class ListItemMoveBehavior : IDisposable
         }
     }
     /// <summary>
-    /// Gets a value indicating whether the beavior is enabled.
+    /// Gets a value indicating whether the behavior is enabled.
     /// </summary>
     /// <param name="obj">The object.</param>
     /// <returns></returns>
@@ -264,7 +264,7 @@ public class ListItemMoveBehavior : IDisposable
     }
 
     /// <summary>
-    /// Sets a value indicating whether the beavior is enabled.
+    /// Sets a value indicating whether the behavior is enabled.
     /// </summary>
     /// <param name="obj">The object.</param>
     /// <param name="value">if set to <c>true</c>, enables the behavior.</param>
